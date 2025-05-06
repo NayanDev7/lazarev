@@ -14,23 +14,72 @@ body {
 
 nav {
     position: fixed;
-    background-color: gray;
+    /* background-color: gray; */
     width: 100%;
-    padding: 2vw 4vw;
+    height: 13vh;
+    padding: 2vw 10.5vw;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 }
 
-#nav-links {
+.nav-links {
     display: flex;
-    gap: 2vw;
+    gap: 2.8vw;
+    align-items: flex-start;
+    padding: 1vh 0;
+    position: relative;
+    z-index: 10;
 }
 
-#nav-links h4{
+.nav-links h4{
 font-size: 0.75vw;
-font-weight: 400;
+font-weight: 600;
+margin-bottom: 2.1vw;
 }
+
+.nav-links h5{
+    margin-bottom: 1vw;
+    /* background-color: red; */
+    opacity: 0;
+}
+
+.nav-links h5 span{
+    font-size: 0.74vw;
+    font-weight: 400;
+    display: inline-block;
+}
+
+nav button{
+    background-color:#008000;
+    display: flex;
+    align-items: center;
+    /* justify-content:space-evenly; */
+    padding: 12px 15px;
+    border-radius: 50px;
+    border: none;
+    font-size: 0.9vw;
+    font-weight: 700;
+}
+
+nav button svg{
+    height: 1vw;
+    margin-left: 1vw;
+}
+
+
+#nav-bottom{
+    width: 79.55%;
+    /* height: 24.5vh; */
+    height: 0;
+    background-color: #111; 
+    position: absolute;
+    top: 100%;
+    z-index: 9;
+    border-bottom: 1px solid #dadada;
+}
+
+
 
 #page1 {
     height: 100vh;
