@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: neue-haas-grotesk-display, sans-serif;
     color: white;
 }
 
@@ -13,14 +13,15 @@ body {
 }
 
 nav {
+    background-color: #111;
     position: fixed;
-    /* background-color: gray; */
     width: 100%;
     height: 13vh;
     padding: 2vw 10.5vw;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    z-index: 10;
 }
 
 .nav-links {
@@ -29,32 +30,30 @@ nav {
     align-items: flex-start;
     padding: 1vh 0;
     position: relative;
-    z-index: 10;
+    z-index: 9;
 }
 
-.nav-links h4{
-font-size: 0.75vw;
-font-weight: 600;
-margin-bottom: 2.1vw;
+.nav-links h4 {
+    font-size: 0.75vw;
+    font-weight: 600;
+    margin-bottom: 2.1vw;
 }
 
-.nav-links h5{
+.nav-links h5 {
     margin-bottom: 1vw;
-    /* background-color: red; */
-    opacity: 0;
+    display: none;
 }
 
-.nav-links h5 span{
+.nav-links h5 span {
     font-size: 0.74vw;
     font-weight: 400;
     display: inline-block;
 }
 
-nav button{
-    background-color:#008000;
+nav button {
+    background-color: #008000;
     display: flex;
     align-items: center;
-    /* justify-content:space-evenly; */
     padding: 12px 15px;
     border-radius: 50px;
     border: none;
@@ -62,24 +61,54 @@ nav button{
     font-weight: 700;
 }
 
-nav button svg{
+nav button svg {
     height: 1vw;
     margin-left: 1vw;
 }
 
 
-#nav-bottom{
+#nav-bottom {
     width: 79.55%;
-    /* height: 24.5vh; */
     height: 0;
-    background-color: #111; 
+    background-color: #111;
     position: absolute;
     top: 100%;
-    z-index: 9;
+    z-index: 8;
     border-bottom: 1px solid #dadada;
 }
 
+#moving-div{
+    position: absolute;
+    display: flex;
+    bottom: 2%;
+    margin: 10vh;
+    width: 50%;
+    overflow: hidden;
+}
 
+#moving-div .move{
+    display: flex;
+    align-items: center;
+    gap: 0.8vw;
+    animation-name: move;
+    animation-duration: 9s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#moving-div .move img{
+    height: 2.2vh;
+    margin: 0 1vw;
+}
+
+@keyframes move{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
 
 #page1 {
     height: 100vh;
@@ -139,4 +168,64 @@ nav button svg{
     height: 100vh;
     width: 100%;
     background-color: #111;
+    position: relative;
+    padding: 0 10.5vw;
+    padding-bottom: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #333;
+}
+
+#page2-left{
+    height: 100%;
+    width: 40%;
+    /* background-color: #333; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 3vw 0vw;
+}
+
+#page2-left p{
+    font-size: 0.890vw;
+}
+
+#page2-left h5{
+    font-size: 1.1vw;
+    font-weight: 400;
+    width: 75%;
+}
+
+
+#page2-right{
+    height: 100%;
+    width: 50%;
+    /* background-color: #333; */
+}
+
+#right-elem{
+    position: relative;
+    /* background-color: gray; */
+    padding-top: 2vw;
+    padding-bottom: 5vw;
+    border-bottom: 1px solid #333;
+}
+
+#right-elem h2{
+font-size: 1.3vw;
+font-weight: 400;
+}
+
+
+
+
+#page3{
+    height: 100vh;
+    width: 100%;
+    background-color: #111;
+    position: relative;
+    /* background-image: url(https://cdn.dribbble.com/userupload/6258310/file/original-41a64871db775f200d5e7f5553485279.png?resize=1504x1128&vertical=center); */
+    background-size: cover;
 }
