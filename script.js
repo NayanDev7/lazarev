@@ -3,7 +3,7 @@ function navAnimation() {
 
   nav.addEventListener("mouseenter", function () {
     document.querySelector("#nav-bottom").style.height = "27vh";
-    document.querySelector("#nav-bottom").style.transition = "0.5s ease-in";
+    document.querySelector("#nav-bottom").style.transition = "0.3s ease-in";
     setTimeout(() => {
       document.querySelectorAll(".h5").forEach((e) => {
         e.style.display = "block";
@@ -46,8 +46,7 @@ function page3VideoAnimation() {
   });
 }
 
-function page7() {
-
+function page7Animation() {
   const page7SecRight = document.querySelector(".sec-right");
   const page7SecRightVideo = document.querySelector(".sec-right video");
 
@@ -62,10 +61,10 @@ function page7() {
     page7SecRightVideo.style.opacity = "0";
   });
 
-  const page7Sec2Right = document.querySelector(".section2");
+  // const page7Sec2Right = document.querySelector(".section2");
   const page7Sec2RightVideo = document.querySelector(".section2 video");
 
-  page7Sec2Right.addEventListener("mouseover", function () {
+  page7Sec2RightVideo.addEventListener("mouseover", function () {
     console.log("h");
     page7Sec2RightVideo.play();
   });
@@ -76,10 +75,50 @@ function page7() {
   });
 }
 
+function page8Animation() {
+  const page8Cont1Vid = document.querySelector("#page8-container .container1 video");
 
+  page8Cont1Vid.addEventListener("mouseover", function () {
+    page8Cont1Vid.play();
+    page8Cont1Vid.style.height = "78%";
+    page8Cont1Vid.style.marginTop = "30%";
+    page8Cont1Vid.style.zIndex = "1";
+    page8Cont1Vid.style.transition = "all 0.4s ease-in-out";
+  });
+
+  page8Cont1Vid.addEventListener("mouseout", function () {
+     page8Cont1Vid.pause();
+      page8Cont1Vid.currentTime = 0;
+    page8Cont1Vid.style.height = "60%";
+    page8Cont1Vid.style.marginTop = "61%";
+    page8Cont1Vid.style.zIndex = "0";
+    page8Cont1Vid.style.transition = "all 0.4s ease-in-out";
+  });
+
+  const page8Cont2Vid = document.querySelector("#page8-container .container2 video");
+
+  page8Cont2Vid.addEventListener("mouseover", function () {
+     page8Cont2Vid.play();
+    page8Cont2Vid.style.height = "78%";
+    page8Cont2Vid.style.marginTop = "30%";
+    page8Cont2Vid.style.zIndex = "1";
+    page8Cont2Vid.style.transition = "all 0.4s ease-in-out";
+  });
+
+  page8Cont2Vid.addEventListener("mouseout", function () {
+       page8Cont2Vid.pause();
+      page8Cont2Vid.currentTime = 0;
+    page8Cont2Vid.style.height = "60%";
+    page8Cont2Vid.style.marginTop = "61%";
+    page8Cont2Vid.style.zIndex = "0";
+    page8Cont2Vid.style.transition = "all 0.4s ease-in-out";
+  });
+}
 
 navAnimation();
 
 page3VideoAnimation();
 
-page7();
+page7Animation();
+
+page8Animation();
