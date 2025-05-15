@@ -3,13 +3,18 @@ function navAnimation() {
 
   nav.addEventListener("mouseenter", function () {
     document.querySelector("#nav-bottom").style.height = "27vh";
-    document.querySelector("#nav-bottom").style.transition = "0.3s ease-in";
-    setTimeout(() => {
-      document.querySelectorAll(".h5").forEach((e) => {
-        e.style.display = "block";
+    document.querySelector("#nav-bottom").style.transition = "0.5s ease-in";
+
+    document.querySelector("#nav-bottom").addEventListener("transitionend", function onTransitionEnd() {
+       
+      if (document.querySelector("#nav-bottom").style.height === "27vh") {
+          document.querySelectorAll(".h5").forEach((e) => {
+            e.style.display = "block";
+          });
+        }
       });
-    }, 600);
   });
+
   nav.addEventListener("mouseleave", function () {
     console.log("hello");
     document.querySelector("#nav-bottom").style.height = "0";
@@ -76,7 +81,9 @@ function page7Animation() {
 }
 
 function page8Animation() {
-  const page8Cont1Vid = document.querySelector("#page8-container .container1 video");
+  const page8Cont1Vid = document.querySelector(
+    "#page8-container .container1 video"
+  );
 
   page8Cont1Vid.addEventListener("mouseover", function () {
     page8Cont1Vid.play();
@@ -87,18 +94,20 @@ function page8Animation() {
   });
 
   page8Cont1Vid.addEventListener("mouseout", function () {
-     page8Cont1Vid.pause();
-      page8Cont1Vid.currentTime = 0;
+    page8Cont1Vid.pause();
+    page8Cont1Vid.currentTime = 0;
     page8Cont1Vid.style.height = "60%";
     page8Cont1Vid.style.marginTop = "61%";
     page8Cont1Vid.style.zIndex = "0";
     page8Cont1Vid.style.transition = "all 0.4s ease-in-out";
   });
 
-  const page8Cont2Vid = document.querySelector("#page8-container .container2 video");
+  const page8Cont2Vid = document.querySelector(
+    "#page8-container .container2 video"
+  );
 
   page8Cont2Vid.addEventListener("mouseover", function () {
-     page8Cont2Vid.play();
+    page8Cont2Vid.play();
     page8Cont2Vid.style.height = "78%";
     page8Cont2Vid.style.marginTop = "30%";
     page8Cont2Vid.style.zIndex = "1";
@@ -106,8 +115,8 @@ function page8Animation() {
   });
 
   page8Cont2Vid.addEventListener("mouseout", function () {
-       page8Cont2Vid.pause();
-      page8Cont2Vid.currentTime = 0;
+    page8Cont2Vid.pause();
+    page8Cont2Vid.currentTime = 0;
     page8Cont2Vid.style.height = "60%";
     page8Cont2Vid.style.marginTop = "61%";
     page8Cont2Vid.style.zIndex = "0";
