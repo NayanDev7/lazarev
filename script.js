@@ -24,6 +24,51 @@ function navAnimation() {
   });
 }
 
+function mobileNavToggle() {
+  const navToggle = document.querySelector(".nav-toggle");
+  const navLinks = document.querySelector(".nav-links");
+  const navBottom = document.querySelector("#nav-bottom");
+  
+  console.log("Mobile nav elements found:", { navToggle, navLinks, navBottom });
+  
+  if (navToggle && navLinks) {
+    navToggle.addEventListener("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log("Hamburger clicked!");
+      navLinks.classList.toggle("active");
+      navToggle.classList.toggle("active");
+      
+      // Handle nav-bottom visibility
+      if (navBottom) {
+        if (navLinks.classList.contains("active")) {
+          navBottom.style.height = "0";
+          navBottom.style.transition = "0.3s ease";
+        } else {
+          navBottom.style.height = "0";
+        }
+      }
+    });
+    
+  
+    // Close mobile menu when clicking outside
+    document.addEventListener("click", function(event) {
+      const nav = document.querySelector("nav");
+      if (!nav.contains(event.target)) {
+        navLinks.classList.remove("active");
+        navToggle.classList.remove("active");
+        
+        // Reset nav-bottom
+        if (navBottom) {
+          navBottom.style.height = "0";
+        }
+      }
+    });
+  } else {
+    console.log("Mobile nav elements not found!");
+  }
+}
+
 function page3VideoAnimation() {
   const page3Center = document.querySelector(".page3-center");
 
@@ -125,6 +170,8 @@ function page8Animation() {
 }
 
 navAnimation();
+
+mobileNavToggle();
 
 page3VideoAnimation();
 
